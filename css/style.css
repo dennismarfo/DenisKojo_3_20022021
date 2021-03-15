@@ -1,0 +1,350 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+body, html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes cardsanim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.header {
+  position: relative;
+  box-shadow: 0 0 0.5rem;
+  padding: 4%;
+}
+.header__logo {
+  font-family: "Shrikhand";
+  text-align: center;
+  margin: 0;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  background-color: #F3F3F3;
+  padding: 5% 6%;
+}
+.localisation__icon {
+  margin-right: 5%;
+}
+
+.explore {
+  text-align: center;
+  padding: 4%;
+}
+.explore__title {
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+.explore__btn {
+  background-color: transparent;
+  --color-from: #9356DC;
+  --color-to: #FF79DA;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  color: #fff;
+  border: none;
+  outline: 0 !important;
+  border-radius: 35px;
+  padding: 17px 30px;
+  font-size: 16px;
+  box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+.explore a {
+  margin: 50px 50px;
+}
+
+.process {
+  padding: 4%;
+}
+.process__steps {
+  list-style: none;
+  counter-reset: compteListe;
+  margin: 0;
+  padding: 0;
+}
+.process__step {
+  padding: 1%;
+  position: relative;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.14);
+  display: flex;
+  background-color: #f6f6f6;
+  margin: 0.4rem 0rem 0.4rem 0.75rem;
+  border-radius: 1rem;
+}
+.process__step::before {
+  background-color: #9356DC;
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  position: absolute;
+  bottom: 22px;
+  left: -10px;
+  border-radius: 70%;
+  color: white;
+  display: flex;
+  height: 23px;
+  width: 23px;
+  justify-content: center;
+  font-weight: 200;
+}
+.process__img {
+  display: flex;
+  align-items: center;
+  margin: auto 1.75rem auto 1.75rem;
+  color: #7e7e7e;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 22px 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: 25px;
+  text-decoration: none;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.14);
+  margin-bottom: 1.25rem;
+  color: black;
+  max-height: 273px;
+}
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 25px 25px 0 0;
+}
+.card__pin {
+  background-color: #99E2D0;
+  color: #1b6150;
+  border-radius: 1%;
+  position: relative;
+  padding: 0.5rem;
+  left: 228px;
+  bottom: 179px;
+}
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.card__infos {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.card__title {
+  margin: 0px;
+}
+.card__sub {
+  margin: 0px;
+}
+.card__heart {
+  display: flex;
+  font-size: x-large;
+  position: relative;
+  right: 22px;
+  top: 3px;
+}
+
+.footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.footer__logo {
+  color: white;
+  font-family: "Shrikhand";
+  font-size: 20px;
+}
+.footer__li {
+  margin-bottom: 10px;
+}
+.footer__ul {
+  list-style: none;
+  padding: 0;
+}
+.footer__link {
+  text-decoration: none;
+  color: white;
+}
+
+/* PAlette du goût */
+.img_palette {
+  object-fit: cover;
+  width: 100%;
+}
+
+.menu_container {
+  border-radius: 25px 25px 0 0;
+  margin-top: -80px;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 15px 0px 15px;
+}
+
+.menu-title {
+  margin-top: 10px;
+  font-family: "Shrikhand";
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.menus__steps {
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.menus::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  top: 125px;
+}
+
+.menusChoice {
+  background-color: white;
+  margin: 9px 0;
+  border-radius: 15px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.13);
+  padding: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  animation: cardsanim 0.6s;
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation-fill-mode: both;
+  max-width: 100%;
+  display: flex;
+  transform: scale(0);
+}
+.menusChoice__title {
+  margin: 0;
+}
+.menusChoice__subtitle {
+  margin: 0;
+}
+.menusChoice__card {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.menusChoice__price {
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+}
+.menusChoice__checked {
+  background-color: #99e2d0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menusChoice:hover .menusChoice__checked {
+  margin-right: -12px;
+}
+.menusChoice__anim {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.menusChoice:hover .menusChoice__anim {
+  transform: rotate(0);
+}
+
+.time-0 {
+  animation-delay: 0s;
+}
+
+.time-1 {
+  animation-delay: 0.1s;
+}
+
+.time-2 {
+  animation-delay: 0.2s;
+}
+
+.time-3 {
+  animation-delay: 0.3s;
+}
+
+.time-4 {
+  animation-delay: 0.4s;
+}
+
+.time-5 {
+  animation-delay: 0.5s;
+}
+
+.time-6 {
+  animation-delay: 0.6s;
+}
+
+.time-7 {
+  animation-delay: 0.7s;
+}
+
+.time-8 {
+  animation-delay: 0.8s;
+}
+
+/* La note enchantée */
+.img_la_note_enchantee {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* arrow */
+.header--Arrow {
+  position: relative;
+}
+.header__Arrow {
+  position: absolute;
+  left: 45px;
+  height: 20px;
+  width: 2rem;
+  top: 38%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
