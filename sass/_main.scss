@@ -31,7 +31,7 @@ $color-tertiary: #99E2D0;
     outline: 0 !important;
     border-radius: 35px;
     padding: 17px 30px;
-    font-size: 16px;
+    font-size: 15px;
     box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in;
     text-decoration: none;
@@ -92,6 +92,7 @@ $color-tertiary: #99E2D0;
         margin: 0;
         padding: 0;
     }
+
     
     &__step {
         padding: 1%;
@@ -116,9 +117,12 @@ $color-tertiary: #99E2D0;
             width: 23px;
             justify-content: center;
             font-weight: 200;
-
+            
         }
         
+        &:hover {
+            background-color: $color-primary;
+        }
         
     }
     
@@ -287,7 +291,7 @@ $color-tertiary: #99E2D0;
         overflow: hidden;
         cursor: pointer;
         animation: cardsanim .6s;
-        animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+        animation-timing-function: cubic-bezier(0.13, 1.4, 0.55, 0.73);
         animation-fill-mode: both;
         max-width: 100%;
         display: flex;
@@ -345,6 +349,10 @@ $color-tertiary: #99E2D0;
     &:hover &__anim {
         transform: rotate(0);
     }
+
+    &__checkedicon {
+        color: $color-tertiary;
+    }
 }
 
 @for $i from 0 to 9 {
@@ -377,4 +385,13 @@ $color-tertiary: #99E2D0;
     font-size: 1.2rem;
     color: black;
       }
+    }
+
+    .order {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .orderbtn {
+        @include button();
     }

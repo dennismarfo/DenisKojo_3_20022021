@@ -52,7 +52,7 @@ body, html {
   outline: 0 !important;
   border-radius: 35px;
   padding: 17px 30px;
-  font-size: 16px;
+  font-size: 15px;
   box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in;
   text-decoration: none;
@@ -93,6 +93,9 @@ body, html {
   width: 23px;
   justify-content: center;
   font-weight: 200;
+}
+.process__step:hover {
+  background-color: #9356DC;
 }
 .process__img {
   display: flex;
@@ -240,7 +243,7 @@ body, html {
   overflow: hidden;
   cursor: pointer;
   animation: cardsanim 0.6s;
-  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation-timing-function: cubic-bezier(0.13, 1.4, 0.55, 0.73);
   animation-fill-mode: both;
   max-width: 100%;
   display: flex;
@@ -287,6 +290,9 @@ body, html {
 }
 .menusChoice:hover .menusChoice__anim {
   transform: rotate(0);
+}
+.menusChoice__checkedicon {
+  color: #99E2D0;
 }
 
 .time-0 {
@@ -345,6 +351,27 @@ body, html {
   justify-content: center;
   font-size: 1.2rem;
   color: black;
+}
+
+.order {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.orderbtn {
+  background-color: transparent;
+  --color-from: #9356DC;
+  --color-to: #FF79DA;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  color: #fff;
+  border: none;
+  outline: 0 !important;
+  border-radius: 35px;
+  padding: 17px 30px;
+  font-size: 15px;
+  box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
