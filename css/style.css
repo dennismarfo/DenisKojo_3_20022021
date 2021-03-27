@@ -100,7 +100,7 @@ body, html {
   text-align: center;
   padding: 4%;
   background-color: #f3f3f3;
-  padding-bottom: 11%;
+  padding-bottom: 20%;
 }
 .explore__title {
   font-weight: 300;
@@ -131,6 +131,7 @@ body, html {
 
 .process {
   padding: 4%;
+  margin: 2% 0 10%;
 }
 .process__steps {
   list-style: none;
@@ -139,12 +140,12 @@ body, html {
   padding: 0;
 }
 .process__step {
-  padding: 1%;
+  padding: 0%;
   position: relative;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.14);
   display: flex;
   background-color: #f6f6f6;
-  margin: 0.4rem 0rem 0.4rem 0.75rem;
+  margin: 1.4rem 0rem 0.4rem 0.75rem;
   border-radius: 1rem;
 }
 .process__step::before {
@@ -163,11 +164,19 @@ body, html {
   font-weight: 200;
   align-items: center;
 }
+.process__step:hover {
+  background-color: #f5edff;
+}
 .process__img {
   display: flex;
   align-items: center;
   margin: auto 1.75rem auto 1.75rem;
   color: #7e7e7e;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .container {
@@ -214,6 +223,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   padding: 15px;
+  align-items: center;
 }
 .card__infos {
   position: relative;
@@ -237,7 +247,7 @@ body, html {
   font-size: x-large;
   position: absolute;
   right: 8px;
-  top: 10px;
+  top: -11px;
 }
 .card__fullheart {
   opacity: 0;
@@ -280,7 +290,7 @@ body, html {
 }
 
 /* PAlette du goût */
-.img_palette {
+.img_card-menu {
   object-fit: cover;
   width: 100%;
 }

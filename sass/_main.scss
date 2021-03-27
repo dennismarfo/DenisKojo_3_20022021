@@ -144,7 +144,7 @@ $color-tertiary: #99E2D0;
     text-align: center;
     padding: 4%;
     background-color: #f3f3f3;
-    padding-bottom: 11%;
+    padding-bottom: 20%;
 
     &__title {
         font-weight: 300;
@@ -164,6 +164,7 @@ $color-tertiary: #99E2D0;
 
 .process {
     padding: 4%;
+    margin: 2% 0 10%;
 
     &__steps {
         list-style: none;
@@ -174,12 +175,12 @@ $color-tertiary: #99E2D0;
 
     
     &__step {
-        padding: 1%;
+        padding: 0%;
         position: relative;
         box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 14%);
         display: flex;
         background-color: #f6f6f6;
-        margin: 0.4rem 0rem 0.4rem 0.75rem;
+        margin: 1.4rem 0rem 0.4rem 0.75rem;
         border-radius: 1rem;
         
         &::before {
@@ -199,6 +200,10 @@ $color-tertiary: #99E2D0;
             align-items: center;
             
         }
+
+        &:hover {
+            background-color: #f5edff;
+        }
         
         
     }
@@ -211,6 +216,11 @@ $color-tertiary: #99E2D0;
             color: #7e7e7e;
         }
 
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .container {
@@ -260,6 +270,7 @@ $color-tertiary: #99E2D0;
         display: flex;
         justify-content: space-between;
         padding: 15px;
+        align-items: center;
     }
 
     &__infos {
@@ -289,7 +300,7 @@ $color-tertiary: #99E2D0;
         font-size: x-large;
         position: absolute;
         right: 8px;
-        top: 10px;
+        top: -11px;
     }
 
     &__fullheart {
@@ -311,6 +322,7 @@ $color-tertiary: #99E2D0;
         opacity: 1;
     }
 }
+
 
 .footer {
     background-color: #353535;
@@ -343,7 +355,7 @@ $color-tertiary: #99E2D0;
 
 /* PAlette du goût */
 
-.img_palette {
+.img_card-menu {
     object-fit: cover;
     width: 100%;
 }
