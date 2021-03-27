@@ -7,13 +7,85 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
+.loading {
+    display: flex;
+    animation: desapear 400ms 4s both;
+    min-height: 100vh;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: white;
+    /*z-index: 999;*/
+    /*top: 0;
+    left: 0;*/
+    
+}
+
+.dot {
+    width: 50px;
+    height: 50px;
+}
+
+.dot:nth-child(1) {
+    background-color: #9356dc;
+    animation: animate 5s alternate infinite;
+}
+
+.dot:nth-child(2) {
+    background-color: #ff79da;
+    animation: animate 6s alternate infinite;
+}
+
+.dot:nth-child(3) {
+    background-color: #99e2d0;
+    animation: animate 7s alternate infinite;
+}
+
+
+@keyframes animate {
+    0%,
+    100% {
+        transform: scale(2);
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: scale(0);
+        border-radius: 50%;
+    }
+}
+
+@keyframes desapear {
+    0%{
+        opacity: 1;
+        z-index: 999;
+    }
+    
+    100%{
+    opacity: 0;
+    z-index: -1;
+    }
+    }
+
+
 
 @keyframes cardsanim {
     0% {
-      transform: scale(0)
+      opacity: 0;
+      top: 0px;
     }
+
+    75% {
+        opacity: 0.5;
+        top: 100px;
+    }
+
     100% {
-      transform: scale(1);
+      transform: translateY(0);
+      opacity: 1;
+      top: 100px;
     }
   }
 
@@ -36,13 +108,16 @@ $color-tertiary: #99E2D0;
     transition: all 0.2s ease-in;
     text-decoration: none;
 
-
+    &:hover {
+        background-color: #fff;
+        box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+    }
 
 }
 
 .header {
     position: relative;
-    box-shadow: 0 0 0.5rem;
+    box-shadow: 0px -8px 1rem 0px;
     padding: 4%;
 
 
@@ -56,7 +131,7 @@ $color-tertiary: #99E2D0;
 .localisation {
     display: flex;
     justify-content: center;
-    background-color:#F3F3F3;
+    background-color:#ecebeb;
     padding: 5% 6%;
 
     &__icon {
@@ -68,6 +143,8 @@ $color-tertiary: #99E2D0;
 .explore {
     text-align: center;
     padding: 4%;
+    background-color: #f3f3f3;
+    padding-bottom: 11%;
 
     &__title {
         font-weight: 300;
@@ -77,6 +154,8 @@ $color-tertiary: #99E2D0;
     &__btn {
         @include button;
     }
+
+
 
     a {
         margin: 50px 50px;
@@ -117,12 +196,10 @@ $color-tertiary: #99E2D0;
             width: 23px;
             justify-content: center;
             font-weight: 200;
+            align-items: center;
             
         }
         
-        &:hover {
-            background-color: $color-primary;
-        }
         
     }
     
@@ -152,29 +229,30 @@ $color-tertiary: #99E2D0;
 }
 
 .card {
-    border-radius: 25px;
+    border-radius: 12px;
     text-decoration: none;
     background-color: white;
-    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 14%);
+    box-shadow: 0.25rem 0.25rem 0.85rem rgb(0 0 0 / 14%);
     margin-bottom: 1.25rem;
     color: black;
     max-height: 273px;
+    position: relative;
 
     &__img {
         width: 100%;
         height: 200px;
         object-fit: cover;
-        border-radius: 25px 25px 0 0;
+        border-radius: 12px 12px 0 0;
     }
 
     &__pin {
         background-color: $color-tertiary;
         color: #1b6150;
-        border-radius: 1%;
-        position: relative;
+        border-radius: 7%;
+        position: absolute;
         padding: 0.5rem;
-        left: 228px;
-        bottom: 179px;
+        left: 240px;
+        bottom: 225px;
 
     }
 
@@ -192,19 +270,45 @@ $color-tertiary: #99E2D0;
     }
 
     &__title {
-        margin: 0px;
+        margin: 0px 0px 5px;
     }
 
     &__sub {
         margin: 0px;
+        font-size: 17px;
+        font-weight: 300;
     }
+
+    &__likeBtn {
+        position: relative;
+    }
+
 
     &__heart {
         display: flex;
         font-size: x-large;
-        position: relative;
-        right: 22px;
-        top: 3px;
+        position: absolute;
+        right: 8px;
+        top: 10px;
+    }
+
+    &__fullheart {
+        opacity: 0;
+    }
+
+    &__fullheart:hover  {
+        opacity: 1;
+        background-image: -webkit-gradient(linear, left bottom, right top, from(#FF79DA), to(#9356DC));
+        background-image: linear-gradient(to top right, #FF79DA, #9356DC);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+
+    &__empty {
+        opacity: 1;
     }
 }
 
@@ -271,16 +375,19 @@ $color-tertiary: #99E2D0;
     &__steps {
         text-transform: uppercase;
         font-weight: 200;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 3rem;
+            height: 0.25rem;
+            background-color: $color-tertiary;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+        }
     }
 
-    &::after {
-        content: "";
-        width: 3rem;
-        height: 0.25rem;
-        background-color: $color-tertiary;
-        position: absolute;
-        top: 125px;
-    }
 }
     .menusChoice {
         background-color: white;
@@ -290,8 +397,7 @@ $color-tertiary: #99E2D0;
         padding: 12px;
         overflow: hidden;
         cursor: pointer;
-        animation: cardsanim .6s;
-        animation-timing-function: cubic-bezier(0.13, 1.4, 0.55, 0.73);
+        animation: cardsanim 2s linear;
         animation-fill-mode: both;
         max-width: 100%;
         display: flex;
@@ -304,12 +410,18 @@ $color-tertiary: #99E2D0;
 
     &__subtitle {
         margin: 0;
+        font-size: 15px;
+        font-weight: 300;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
-    &__card {
-        display: flex;
-        justify-content: space-between;
+    &__infos {
         flex: 1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
         
     }
 
