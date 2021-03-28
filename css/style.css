@@ -323,6 +323,7 @@ h5 {
   text-transform: uppercase;
   font-weight: 200;
   position: relative;
+  margin-bottom: 28px;
 }
 .menus__steps::after {
   content: "";
@@ -481,6 +482,86 @@ h5 {
 .orderbtn:hover {
   background-color: #fff;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 1024px) {
+  .heroImg {
+    max-width: 100%;
+    max-height: 32rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .menus {
+    display: flex;
+    padding: 0 16px;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .menu_container {
+    margin: -61px 130px 0;
+  }
+
+  .img_card-menu {
+    max-height: 32rem;
+  }
+
+  .bloc {
+    width: 30%;
+  }
+
+  .footer__logo {
+    text-align: center;
+  }
+  .footer__ul {
+    text-align: center;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5%;
+    row-gap: 5%;
+    column-gap: 5%;
+  }
+
+  .card__pin {
+    right: 27px;
+    left: inherit;
+  }
+
+  .process {
+    margin: 0;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+  }
+  .process__title {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .process__steps {
+    display: flex;
+    justify-content: center;
+  }
+  .process__step {
+    padding-right: 30px;
+    margin: 1.4rem 2rem 0.4rem 0.75rem;
+  }
+
+  #restau {
+    margin-left: 5%;
+  }
+
+  .explore {
+    padding-bottom: 4%;
+  }
+
+  .localisation {
+    padding: 3% 3%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
