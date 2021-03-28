@@ -1,0 +1,486 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+body, html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.loading {
+  display: flex;
+  animation: desapear 400ms 4s both;
+  min-height: 100vh;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  background-color: white;
+  /*z-index: 999;*/
+  /*top: 0;
+  left: 0;*/
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+}
+
+.dot:nth-child(1) {
+  background-color: #9356dc;
+  animation: animate 5s alternate infinite;
+}
+
+.dot:nth-child(2) {
+  background-color: #ff79da;
+  animation: animate 6s alternate infinite;
+}
+
+.dot:nth-child(3) {
+  background-color: #99e2d0;
+  animation: animate 7s alternate infinite;
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: scale(2);
+    border-radius: 50%;
+  }
+  50% {
+    transform: scale(0);
+    border-radius: 50%;
+  }
+}
+@keyframes desapear {
+  0% {
+    opacity: 1;
+    z-index: 999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes cardsanim {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+  75% {
+    opacity: 0.5;
+    top: 100px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    top: 100px;
+  }
+}
+.header {
+  position: relative;
+  box-shadow: 0px -8px 1rem 0px;
+  padding: 4%;
+}
+.header__logo {
+  font-family: "Shrikhand";
+  text-align: center;
+  margin: 0;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  background-color: #ecebeb;
+  padding: 5% 6%;
+}
+.localisation__icon {
+  margin-right: 5%;
+}
+
+.explore {
+  text-align: center;
+  padding: 4%;
+  background-color: #f3f3f3;
+  padding-bottom: 20%;
+}
+.explore__title {
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+.explore__btn {
+  background-color: transparent;
+  --color-from: #9356DC;
+  --color-to: #FF79DA;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  color: #fff;
+  border: none;
+  outline: 0 !important;
+  border-radius: 35px;
+  padding: 17px 30px;
+  font-size: 15px;
+  box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+.explore__btn:hover {
+  background-color: #fff;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+.explore a {
+  margin: 50px 50px;
+}
+
+.process {
+  padding: 4%;
+  margin: 2% 0 10%;
+}
+.process__steps {
+  list-style: none;
+  counter-reset: compteListe;
+  margin: 0;
+  padding: 0;
+}
+.process__step {
+  padding: 0%;
+  position: relative;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.14);
+  display: flex;
+  background-color: #f6f6f6;
+  margin: 1.4rem 0rem 0.4rem 0.75rem;
+  border-radius: 1rem;
+}
+.process__step::before {
+  background-color: #9356DC;
+  counter-increment: compteListe 1;
+  content: counter(compteListe) " ";
+  position: absolute;
+  bottom: 22px;
+  left: -10px;
+  border-radius: 70%;
+  color: white;
+  display: flex;
+  height: 23px;
+  width: 23px;
+  justify-content: center;
+  font-weight: 200;
+  align-items: center;
+}
+.process__step:hover {
+  background-color: #f5edff;
+}
+.process__img {
+  display: flex;
+  align-items: center;
+  margin: auto 1.75rem auto 1.75rem;
+  color: #7e7e7e;
+}
+
+h5 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 22px 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.85rem rgba(0, 0, 0, 0.14);
+  margin-bottom: 1.25rem;
+  color: black;
+  max-height: 273px;
+  position: relative;
+}
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+.card__pin {
+  background-color: #99E2D0;
+  color: #1b6150;
+  border-radius: 7%;
+  position: absolute;
+  padding: 0.5rem;
+  left: 240px;
+  bottom: 225px;
+}
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+.card__infos {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.card__title {
+  margin: 0px 0px 5px;
+}
+.card__sub {
+  margin: 0px;
+  font-size: 17px;
+  font-weight: 300;
+}
+.card__likeBtn {
+  position: relative;
+}
+.card__heart {
+  display: flex;
+  font-size: x-large;
+  position: absolute;
+  right: 8px;
+  top: -11px;
+}
+.card__fullheart {
+  opacity: 0;
+}
+.card__fullheart:hover {
+  opacity: 1;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#FF79DA), to(#9356DC));
+  background-image: linear-gradient(to top right, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.card__empty {
+  opacity: 1;
+}
+
+.footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.footer__logo {
+  color: white;
+  font-family: "Shrikhand";
+  font-size: 20px;
+}
+.footer__li {
+  margin-bottom: 10px;
+}
+.footer__ul {
+  list-style: none;
+  padding: 0;
+}
+.footer__link {
+  text-decoration: none;
+  color: white;
+}
+
+/* PAlette du goût */
+.img_card-menu {
+  object-fit: cover;
+  width: 100%;
+}
+
+.menu_container {
+  border-radius: 25px 25px 0 0;
+  margin-top: -80px;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 15px 0px 15px;
+}
+
+.menu-title {
+  margin-top: 10px;
+  font-family: "Shrikhand";
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.menus__steps {
+  text-transform: uppercase;
+  font-weight: 200;
+  position: relative;
+}
+.menus__steps::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.menusChoice {
+  background-color: white;
+  margin: 9px 0;
+  border-radius: 15px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.13);
+  padding: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  animation: cardsanim 2s linear;
+  animation-fill-mode: both;
+  max-width: 100%;
+  display: flex;
+  transform: scale(0);
+}
+.menusChoice__title {
+  margin: 0;
+}
+.menusChoice__subtitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menusChoice__infos {
+  flex: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menusChoice__price {
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+}
+.menusChoice__checked {
+  background-color: #99e2d0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menusChoice:hover .menusChoice__checked {
+  margin-right: -12px;
+}
+.menusChoice__anim {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.menusChoice:hover .menusChoice__anim {
+  transform: rotate(0);
+}
+.menusChoice__checkedicon {
+  color: #99E2D0;
+}
+
+.time-0 {
+  animation-delay: 0s;
+}
+
+.time-1 {
+  animation-delay: 0.1s;
+}
+
+.time-2 {
+  animation-delay: 0.2s;
+}
+
+.time-3 {
+  animation-delay: 0.3s;
+}
+
+.time-4 {
+  animation-delay: 0.4s;
+}
+
+.time-5 {
+  animation-delay: 0.5s;
+}
+
+.time-6 {
+  animation-delay: 0.6s;
+}
+
+.time-7 {
+  animation-delay: 0.7s;
+}
+
+.time-8 {
+  animation-delay: 0.8s;
+}
+
+/* La note enchantée */
+.img_la_note_enchantee {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* arrow */
+.header--Arrow {
+  position: relative;
+}
+.header__Arrow {
+  position: absolute;
+  left: 45px;
+  height: 20px;
+  width: 2rem;
+  top: 38%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.order {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.orderbtn {
+  background-color: transparent;
+  --color-from: #9356DC;
+  --color-to: #FF79DA;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  color: #fff;
+  border: none;
+  outline: 0 !important;
+  border-radius: 35px;
+  padding: 17px 30px;
+  font-size: 15px;
+  box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+}
+.orderbtn:hover {
+  background-color: #fff;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=style.css.map */
