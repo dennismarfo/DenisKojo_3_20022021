@@ -66,7 +66,7 @@ body, html {
     top: 0px;
   }
   75% {
-    opacity: 0.5;
+    opacity: 1;
     top: 100px;
   }
   100% {
@@ -124,6 +124,9 @@ body, html {
 .explore__btn:hover {
   background-color: #fff;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  --color-from: #9356dcd6;
+  --color-to: #ff79b7f0;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
 }
 .explore a {
   margin: 50px 50px;
@@ -153,7 +156,7 @@ body, html {
   counter-increment: compteListe 1;
   content: counter(compteListe) " ";
   position: absolute;
-  bottom: 22px;
+  bottom: 35%;
   left: -10px;
   border-radius: 70%;
   color: white;
@@ -201,7 +204,7 @@ h5 {
   box-shadow: 0.25rem 0.25rem 0.85rem rgba(0, 0, 0, 0.14);
   margin-bottom: 1.25rem;
   color: black;
-  max-height: 273px;
+  max-height: 280px;
   position: relative;
 }
 .card__img {
@@ -264,6 +267,10 @@ h5 {
 }
 .card__empty {
   opacity: 1;
+}
+.card__empty:hover {
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .footer {
@@ -351,6 +358,9 @@ h5 {
 }
 .menusChoice__title {
   margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menusChoice__subtitle {
   margin: 0;
@@ -482,6 +492,9 @@ h5 {
 .orderbtn:hover {
   background-color: #fff;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  --color-from: #9356dcd6;
+  --color-to: #ff79b7f0;
+  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
 }
 
 @media (min-width: 1024px) {
@@ -497,6 +510,10 @@ h5 {
     padding: 0 16px;
     justify-content: space-around;
     flex-direction: row;
+  }
+
+  .menusChoice__subtitle {
+    width: 90%;
   }
 
   .menu_container {
