@@ -89,7 +89,7 @@ $color-tertiary: #99E2D0;
     }
   }
 
-@mixin button {
+  @mixin button {
     background-color: transparent;
     --color-from: #9356DC;
     --color-to: #FF79DA;
@@ -107,7 +107,7 @@ $color-tertiary: #99E2D0;
     box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in;
     text-decoration: none;
-
+  
     &:hover {
         background-color: #fff;
         box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
@@ -117,8 +117,8 @@ $color-tertiary: #99E2D0;
         var(--color-from), 
         var(--color-to));
     }
-
-}
+  
+  }
 
 .header {
     position: relative;
