@@ -128,9 +128,6 @@ body, html {
   --color-to: #ff79b7f0;
   background-image: linear-gradient(to top, var(--color-from), var(--color-to));
 }
-.explore a {
-  margin: 50px 50px;
-}
 
 .process {
   padding: 4%;
@@ -219,8 +216,8 @@ h5 {
   border-radius: 7%;
   position: absolute;
   padding: 0.5rem;
-  left: 240px;
-  bottom: 225px;
+  right: 5%;
+  top: 10%;
 }
 .card__content {
   display: flex;
