@@ -1,61 +1,4 @@
-body, html {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-  }
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-
-.loading {
-    display: flex;
-    animation: desapear 400ms 4s both;
-    min-height: 100vh;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    background-color: white;
-    /*z-index: 999;*/
-    /*top: 0;
-    left: 0;*/
-    
-}
-
-.dot {
-    width: 50px;
-    height: 50px;
-}
-
-.dot:nth-child(1) {
-    background-color: #9356dc;
-    animation: animate 5s alternate infinite;
-}
-
-.dot:nth-child(2) {
-    background-color: #ff79da;
-    animation: animate 6s alternate infinite;
-}
-
-.dot:nth-child(3) {
-    background-color: #99e2d0;
-    animation: animate 7s alternate infinite;
-}
-
-
-@keyframes animate {
-    0%,
-    100% {
-        transform: scale(2);
-        border-radius: 50%;
-    }
-
-    50% {
-        transform: scale(0);
-        border-radius: 50%;
-    }
-}
 
 @keyframes desapear {
     0%{
@@ -89,144 +32,6 @@ $color-tertiary: #99E2D0;
     }
   }
 
-@mixin button {
-    background-color: transparent;
-    --color-from: #9356DC;
-    --color-to: #FF79DA;
-    background-image: linear-gradient(
-      to top,
-      var(--color-from),
-      var(--color-to)
-    );
-    color: #fff;
-    border: none;
-    outline: 0 !important;
-    border-radius: 35px;
-    padding: 17px 30px;
-    font-size: 15px;
-    box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease-in;
-    text-decoration: none;
-
-    &:hover {
-        background-color: #fff;
-        box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
-        --color-from: #9356dcd6;
-        --color-to: #ff79b7f0;
-        background-image: linear-gradient(to top, 
-        var(--color-from), 
-        var(--color-to));
-    }
-
-}
-
-.header {
-    position: relative;
-    box-shadow: 0px -8px 1rem 0px;
-    padding: 4%;
-
-
-    &__logo {
-        font-family: "Shrikhand";
-        text-align: center;
-        margin: 0;
-    }
-}
-
-.localisation {
-    display: flex;
-    justify-content: center;
-    background-color:#ecebeb;
-    padding: 5% 6%;
-
-    &__icon {
-        margin-right: 5%;
-    }
-    
-}
-
-.explore {
-    text-align: center;
-    padding: 4%;
-    background-color: #f3f3f3;
-    padding-bottom: 20%;
-
-    &__title {
-        font-weight: 300;
-        margin-bottom: 3rem;
-    }
-
-    &__btn {
-        @include button;
-    }
-
-
-
-    a {
-        margin: 50px 50px;
-    }
-}
-
-.process {
-    padding: 4%;
-    margin: 2% 0 10%;
-
-    &__steps {
-        list-style: none;
-        counter-reset: compteListe;
-        margin: 0;
-        padding: 0;
-    }
-
-    
-    &__step {
-        padding: 0%;
-        position: relative;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 14%);
-        display: flex;
-        background-color: #f6f6f6;
-        margin: 1.4rem 0rem 0.4rem 0.75rem;
-        border-radius: 1rem;
-        
-        &::before {
-            background-color: $color-primary;
-            counter-increment: compteListe 1;
-            content: counter(compteListe) " ";
-            position: absolute;
-            bottom: 35%;
-            left: -10px;
-            border-radius: 70%;
-            color: white;
-            display: flex;
-            height: 23px;
-            width: 23px;
-            justify-content: center;
-            font-weight: 200;
-            align-items: center;
-            
-        }
-
-        &:hover {
-            background-color: #f5edff;
-        }
-        
-        
-    }
-    
-    &__img {
-    
-            display: flex;
-            align-items: center;
-            margin: auto 1.75rem auto 1.75rem;
-            color: #7e7e7e;
-        }
-
-}
-
-h5 {
-    font-weight: 500;
-    font-size: 16px;
-}
 
 .container {
     margin: auto;
@@ -266,8 +71,8 @@ h5 {
         border-radius: 7%;
         position: absolute;
         padding: 0.5rem;
-        left: 240px;
-        bottom: 225px;
+        right: 5%;
+        top: 10%;
 
     }
 
@@ -299,6 +104,20 @@ h5 {
         position: relative;
     }
 
+    &__likeBtn:hover {
+        .card__fullheart  {
+            opacity: 1;
+            background-image: linear-gradient(to top right, #FF79DA, #9356DC);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            color: transparent;
+            transition: 0.5s;
+        }
+        .card__empty {
+            opacity: 0;
+            transition: 0.5s;
+        }
+    }
 
     &__heart {
         display: flex;
@@ -312,56 +131,15 @@ h5 {
         opacity: 0;
     }
 
-    &__fullheart:hover  {
-        opacity: 1;
-        background-image: -webkit-gradient(linear, left bottom, right top, from(#FF79DA), to(#9356DC));
-        background-image: linear-gradient(to top right, #FF79DA, #9356DC);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-    }
+
 
     &__empty {
         opacity: 1;
     }
 
-    &__empty:hover {
-        opacity: 0;
-        transition: 0.5s;
-    }
+
 }
 
-
-.footer {
-    background-color: #353535;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-
-    &__logo {
-        color: white;
-        font-family: "Shrikhand";
-        font-size: 20px;
-
-    }
-
-    &__li {
-        margin-bottom: 10px;
-    }
-
-    &__ul {
-      list-style: none;
-      padding: 0;    
-    }
-
-
-    &__link {
-        text-decoration: none;
-        color: white;
-    }
-}
 
 /* PAlette du goût */
 
@@ -493,11 +271,7 @@ h5 {
     }
 }
 
-@for $i from 0 to 9 {
-    .time-#{$i} {
-      animation-delay:  #{$i/10}s;
-    }
-  }
+
 
 /* La note enchantée */
 
@@ -599,7 +373,7 @@ h5 {
             margin: 0;
             padding: 3%;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             
             &__title {
                 display: flex;

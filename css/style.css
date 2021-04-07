@@ -1,10 +1,5 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-body, html {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
-
 .loading {
   display: flex;
   animation: desapear 400ms 4s both;
@@ -15,9 +10,6 @@ body, html {
   height: 100%;
   justify-content: center;
   background-color: white;
-  /*z-index: 999;*/
-  /*top: 0;
-  left: 0;*/
 }
 
 .dot {
@@ -50,42 +42,6 @@ body, html {
     border-radius: 50%;
   }
 }
-@keyframes desapear {
-  0% {
-    opacity: 1;
-    z-index: 999;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-@keyframes cardsanim {
-  0% {
-    opacity: 0;
-    top: 0px;
-  }
-  75% {
-    opacity: 1;
-    top: 100px;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-    top: 100px;
-  }
-}
-.header {
-  position: relative;
-  box-shadow: 0px -8px 1rem 0px;
-  padding: 4%;
-}
-.header__logo {
-  font-family: "Shrikhand";
-  text-align: center;
-  margin: 0;
-}
-
 .localisation {
   display: flex;
   justify-content: center;
@@ -107,13 +63,9 @@ body, html {
   margin-bottom: 3rem;
 }
 .explore__btn {
-  background-color: transparent;
-  --color-from: #9356DC;
-  --color-to: #FF79DA;
-  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  background: linear-gradient(#9356DC, #FF79DA);
   color: #fff;
   border: none;
-  outline: 0 !important;
   border-radius: 35px;
   padding: 17px 30px;
   font-size: 15px;
@@ -124,12 +76,7 @@ body, html {
 .explore__btn:hover {
   background-color: #fff;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
-  --color-from: #9356dcd6;
-  --color-to: #ff79b7f0;
-  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
-}
-.explore a {
-  margin: 50px 50px;
+  background: linear-gradient(#9356dcd6, #ff79b7f0);
 }
 
 .process {
@@ -177,11 +124,106 @@ body, html {
   color: #7e7e7e;
 }
 
-h5 {
-  font-weight: 500;
-  font-size: 16px;
+body, html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
+.header {
+  position: relative;
+  box-shadow: 0px -8px 1rem 0px;
+  padding: 4%;
+}
+.header__logo {
+  font-family: "Shrikhand";
+  text-align: center;
+  margin: 0;
+}
+
+.footer {
+  background-color: #353535;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.footer__logo {
+  color: white;
+  font-family: "Shrikhand";
+  font-size: 20px;
+}
+.footer__li {
+  margin-bottom: 10px;
+}
+.footer__ul {
+  list-style: none;
+  padding: 0;
+}
+.footer__link {
+  text-decoration: none;
+  color: white;
+}
+
+.time-0 {
+  animation-delay: 0s;
+}
+
+.time-1 {
+  animation-delay: 0.1s;
+}
+
+.time-2 {
+  animation-delay: 0.2s;
+}
+
+.time-3 {
+  animation-delay: 0.3s;
+}
+
+.time-4 {
+  animation-delay: 0.4s;
+}
+
+.time-5 {
+  animation-delay: 0.5s;
+}
+
+.time-6 {
+  animation-delay: 0.6s;
+}
+
+.time-7 {
+  animation-delay: 0.7s;
+}
+
+.time-8 {
+  animation-delay: 0.8s;
+}
+
+@keyframes desapear {
+  0% {
+    opacity: 1;
+    z-index: 999;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes cardsanim {
+  0% {
+    opacity: 0;
+    top: 0px;
+  }
+  75% {
+    opacity: 1;
+    top: 100px;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    top: 100px;
+  }
+}
 .container {
   margin: auto;
   position: relative;
@@ -219,8 +261,8 @@ h5 {
   border-radius: 7%;
   position: absolute;
   padding: 0.5rem;
-  left: 240px;
-  bottom: 225px;
+  right: 5%;
+  top: 10%;
 }
 .card__content {
   display: flex;
@@ -245,6 +287,18 @@ h5 {
 .card__likeBtn {
   position: relative;
 }
+.card__likeBtn:hover .card__fullheart {
+  opacity: 1;
+  background-image: linear-gradient(to top right, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: transparent;
+  transition: 0.5s;
+}
+.card__likeBtn:hover .card__empty {
+  opacity: 0;
+  transition: 0.5s;
+}
 .card__heart {
   display: flex;
   font-size: x-large;
@@ -255,45 +309,8 @@ h5 {
 .card__fullheart {
   opacity: 0;
 }
-.card__fullheart:hover {
-  opacity: 1;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#FF79DA), to(#9356DC));
-  background-image: linear-gradient(to top right, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
 .card__empty {
   opacity: 1;
-}
-.card__empty:hover {
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.footer {
-  background-color: #353535;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-.footer__logo {
-  color: white;
-  font-family: "Shrikhand";
-  font-size: 20px;
-}
-.footer__li {
-  margin-bottom: 10px;
-}
-.footer__ul {
-  list-style: none;
-  padding: 0;
-}
-.footer__link {
-  text-decoration: none;
-  color: white;
 }
 
 /* PAlette du goût */
@@ -411,42 +428,6 @@ h5 {
   color: #99E2D0;
 }
 
-.time-0 {
-  animation-delay: 0s;
-}
-
-.time-1 {
-  animation-delay: 0.1s;
-}
-
-.time-2 {
-  animation-delay: 0.2s;
-}
-
-.time-3 {
-  animation-delay: 0.3s;
-}
-
-.time-4 {
-  animation-delay: 0.4s;
-}
-
-.time-5 {
-  animation-delay: 0.5s;
-}
-
-.time-6 {
-  animation-delay: 0.6s;
-}
-
-.time-7 {
-  animation-delay: 0.7s;
-}
-
-.time-8 {
-  animation-delay: 0.8s;
-}
-
 /* La note enchantée */
 .img_la_note_enchantee {
   object-fit: cover;
@@ -475,13 +456,9 @@ h5 {
 }
 
 .orderbtn {
-  background-color: transparent;
-  --color-from: #9356DC;
-  --color-to: #FF79DA;
-  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  background: linear-gradient(#9356DC, #FF79DA);
   color: #fff;
   border: none;
-  outline: 0 !important;
   border-radius: 35px;
   padding: 17px 30px;
   font-size: 15px;
@@ -492,9 +469,7 @@ h5 {
 .orderbtn:hover {
   background-color: #fff;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
-  --color-from: #9356dcd6;
-  --color-to: #ff79b7f0;
-  background-image: linear-gradient(to top, var(--color-from), var(--color-to));
+  background: linear-gradient(#9356dcd6, #ff79b7f0);
 }
 
 @media (min-width: 1024px) {
@@ -552,7 +527,7 @@ h5 {
     margin: 0;
     padding: 3%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
   .process__title {
     display: flex;

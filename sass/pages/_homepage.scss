@@ -1,0 +1,133 @@
+.loading {
+    display: flex;
+    animation: desapear 400ms 4s both;
+    min-height: 100vh;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: white;
+    
+}
+
+.dot {
+    width: 50px;
+    height: 50px;
+}
+
+.dot:nth-child(1) {
+    background-color: #9356dc;
+    animation: animate 5s alternate infinite;
+}
+
+.dot:nth-child(2) {
+    background-color: #ff79da;
+    animation: animate 6s alternate infinite;
+}
+
+.dot:nth-child(3) {
+    background-color: #99e2d0;
+    animation: animate 7s alternate infinite;
+}
+
+
+@keyframes animate {
+    0%,
+    100% {
+        transform: scale(2);
+        border-radius: 50%;
+    }
+
+    50% {
+        transform: scale(0);
+        border-radius: 50%;
+    }
+}
+
+
+.localisation {
+    display: flex;
+    justify-content: center;
+    background-color:#ecebeb;
+    padding: 5% 6%;
+
+    &__icon {
+        margin-right: 5%;
+    }
+    
+}
+
+.explore {
+    text-align: center;
+    padding: 4%;
+    background-color: #f3f3f3;
+    padding-bottom: 20%;
+
+    &__title {
+        font-weight: 300;
+        margin-bottom: 3rem;
+    }
+
+    &__btn {
+        @include button;
+    }
+
+
+}
+
+.process {
+    padding: 4%;
+    margin: 2% 0 10%;
+
+    &__steps {
+        list-style: none;
+        counter-reset: compteListe;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+    &__step {
+        padding: 0%;
+        position: relative;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 14%);
+        display: flex;
+        background-color: #f6f6f6;
+        margin: 1.4rem 0rem 0.4rem 0.75rem;
+        border-radius: 1rem;
+        
+        &::before {
+            background-color: $color-primary;
+            counter-increment: compteListe 1;
+            content: counter(compteListe) " ";
+            position: absolute;
+            bottom: 35%;
+            left: -10px;
+            border-radius: 70%;
+            color: white;
+            display: flex;
+            height: 23px;
+            width: 23px;
+            justify-content: center;
+            font-weight: 200;
+            align-items: center;
+            
+        }
+
+        &:hover {
+            background-color: #f5edff;
+        }
+        
+        
+    }
+    
+    &__img {
+    
+            display: flex;
+            align-items: center;
+            margin: auto 1.75rem auto 1.75rem;
+            color: #7e7e7e;
+        }
+
+}
