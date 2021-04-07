@@ -1,5 +1,4 @@
 
-
 @keyframes desapear {
     0%{
         opacity: 1;
@@ -270,6 +269,12 @@
         color: $color-tertiary;
     }
 }
+
+@for $i from 0 to 9 {
+    .time-#{$i} {
+      animation-delay:  #{$i/10}s;
+    }
+  }
 
 
 
