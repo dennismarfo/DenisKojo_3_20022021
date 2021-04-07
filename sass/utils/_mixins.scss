@@ -1,0 +1,18 @@
+@mixin button {
+    background: linear-gradient(#9356DC, #FF79DA);
+    color: #fff;
+    border: none;
+    border-radius: 35px;
+    padding: 17px 30px;
+    font-size: 15px;
+    box-shadow: 4px 6px 30px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #fff;
+        box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+        background: linear-gradient(#9356dcd6, #ff79b7f0);
+    }
+
+}
