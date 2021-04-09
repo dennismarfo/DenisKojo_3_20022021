@@ -360,36 +360,8 @@
     left: inherit;
   }
 
-  .process {
-    margin: 0;
-    padding: 3%;
-    display: flex;
-    justify-content: space-around;
-  }
-  .process__title {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-  }
-  .process__steps {
-    display: flex;
-    justify-content: center;
-  }
-  .process__step {
-    padding-right: 30px;
-    margin: 1.4rem 2rem 0.4rem 0.75rem;
-  }
-
   #restau {
     margin-left: 5%;
-  }
-
-  .explore {
-    padding-bottom: 4%;
-  }
-
-  .localisation {
-    padding: 3% 3%;
   }
 }
 .loading {
@@ -516,6 +488,35 @@
   color: #7e7e7e;
 }
 
+@media (min-width: 1024px) {
+  .localisation {
+    padding: 3% 3%;
+  }
+
+  .explore {
+    padding-bottom: 4%;
+  }
+
+  .process {
+    margin: 0;
+    padding: 3%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .process__title {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  .process__steps {
+    display: flex;
+    justify-content: center;
+  }
+  .process__step {
+    padding-right: 30px;
+    margin: 1.4rem 2rem 0.4rem 0.75rem;
+  }
+}
 body, html {
   margin: 0;
   font-family: "Roboto", sans-serif;

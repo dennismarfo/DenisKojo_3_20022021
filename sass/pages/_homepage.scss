@@ -131,3 +131,40 @@
         }
 
 }
+
+@media (min-width: 1024px) { 
+
+    .localisation {
+        padding: 3% 3%;
+    }
+
+    .explore {
+        padding-bottom: 4%;
+    }
+
+    .process {
+        margin: 0;
+        padding: 3%;
+        display: flex;
+        justify-content: space-around;
+        
+        &__title {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        &__steps {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__step {
+
+            padding-right: 30px;
+            margin: 1.4rem 2rem 0.4rem 0.75rem;
+        }
+    }
+
+
+}
